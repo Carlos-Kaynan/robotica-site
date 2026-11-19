@@ -1,3 +1,4 @@
+import BlocosScratch from './BlocosScratch.jsx'
 import { ilustracoes } from './ilustracoes/index.js'
 import TextoRico from './TextoRico.jsx'
 
@@ -41,6 +42,8 @@ export default function Bloco({ bloco }) {
         </figure>
       )
     }
+    case 'scratch':
+      return <BlocosScratch blocos={bloco.blocos} legenda={bloco.legenda} />
     case 'dica':
     case 'cuidado':
       return (

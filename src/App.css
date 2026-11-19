@@ -417,7 +417,9 @@ a.cartao-trilha:hover {
 }
 
 /* Diagramas de circuito são mais largos que as peças sozinhas. */
-.figura-circuito-led svg {
+.figura-circuito-led svg,
+.figura-tela-scratch svg,
+.figura-palco-coordenadas svg {
   max-width: 540px;
 }
 
@@ -483,6 +485,131 @@ a.cartao-trilha:hover {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+/* ---------- Blocos do Scratch (src/components/BlocosScratch.jsx) ---------- */
+/* Cores das categorias, iguais às do Scratch. Nas cores claras o texto é escuro, para dar para ler. */
+.scratch-eventos { --cor: #ffbf00; --cor-borda: #cc9900; --cor-texto: #2b2100; }
+.scratch-movimento { --cor: #4c97ff; --cor-borda: #3373cc; --cor-texto: #fff; }
+.scratch-aparencia { --cor: #9966ff; --cor-borda: #774dcb; --cor-texto: #fff; }
+.scratch-som { --cor: #cf63cf; --cor-borda: #bd42bd; --cor-texto: #fff; }
+.scratch-controle { --cor: #ffab19; --cor-borda: #cf8b17; --cor-texto: #2b1d00; }
+.scratch-sensores { --cor: #5cb1d6; --cor-borda: #2e8eb8; --cor-texto: #0b2a38; }
+.scratch-operadores { --cor: #59c059; --cor-borda: #389438; --cor-texto: #0d2b0d; }
+.scratch-variaveis { --cor: #ff8c1a; --cor-borda: #db6e00; --cor-texto: #2b1500; }
+
+.figura-scratch {
+  text-align: left;
+  overflow-x: auto;
+}
+
+.scratch {
+  display: inline-block;
+  font-family: var(--fonte-texto);
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.scratch-pilha {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.licao-conteudo .scratch-pilha li + li {
+  margin-top: 0;
+}
+
+.scratch-bloco {
+  display: flex;
+  flex-direction: column;
+}
+
+.scratch-linha {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-height: 2.4rem;
+  min-width: 7rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--cor);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+}
+
+/* "Chapéu": o bloco que começa o código tem o topo arredondado. */
+.scratch-chapeu .scratch-linha {
+  border-radius: 22px 22px 6px 6px / 14px 14px 6px 6px;
+  padding-top: 0.7rem;
+}
+
+/* Blocos em forma de "C" */
+.scratch-c > .scratch-linha {
+  border-bottom-left-radius: 0;
+}
+
+.scratch-meio {
+  min-height: 2rem;
+  border-radius: 0 6px 6px 0;
+}
+
+.scratch-boca {
+  border-left: 1rem solid var(--cor);
+  min-height: 1.5rem;
+}
+
+.scratch-pe {
+  height: 1rem;
+  background: var(--cor);
+  border: 1px solid var(--cor-borda);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.scratch-campo,
+.scratch-menu,
+.scratch-condicao {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  font-weight: 700;
+}
+
+.scratch-campo {
+  background: #fff;
+  color: #575e75;
+  border-radius: 999px;
+}
+
+.scratch-menu {
+  background: rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 6px;
+}
+
+.scratch-operador {
+  padding: 0.15rem 0.5rem;
+  background: #59c059;
+  color: #0d2b0d;
+  border: 1px solid #389438;
+  border-radius: 999px;
+}
+
+.scratch-condicao {
+  padding: 0.2rem 1rem;
+  background: #5cb1d6;
+  color: #0b2a38;
+  clip-path: polygon(0.7rem 0, calc(100% - 0.7rem) 0, 100% 50%, calc(100% - 0.7rem) 100%, 0.7rem 100%, 0 50%);
+}
+
+.figura .scratch-bandeira {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 /* ---------- Quiz do fim da lição ---------- */

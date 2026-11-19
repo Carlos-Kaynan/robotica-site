@@ -2,6 +2,7 @@
 // Cada trilha tem uma lista de lições (pasta src/data/licoes/<id da trilha>/).
 // Trilha com "licoes: []" aparece na tela inicial como "Em breve".
 import pecasArduino from './licoes/pecas-arduino/index.js'
+import scratch from './licoes/scratch/index.js'
 
 export const trilhas = [
   {
@@ -9,7 +10,7 @@ export const trilhas = [
     icone: '🧩',
     titulo: 'Scratch',
     resumo: 'Lógica, repetição, condições e eventos com blocos de encaixar. No fim, você cria um minijogo.',
-    licoes: [],
+    licoes: scratch,
   },
   {
     id: 'mundo-fisico',
