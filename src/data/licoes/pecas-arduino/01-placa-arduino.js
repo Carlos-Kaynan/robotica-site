@@ -71,4 +71,46 @@ export default {
       ],
     },
   ],
+  quiz: [
+    {
+      pergunta: 'Qual é o trabalho do Arduino num projeto?',
+      opcoes: [
+        'Rodar um programa que controla luzes, motores e sensores',
+        'Mostrar vídeos numa tela',
+        'Só guardar arquivos, como um pen drive',
+      ],
+      certa: 0,
+      explicacao: 'O Arduino é o **cérebro** do projeto: um pequeno computador que roda o seu programa e, com ele, controla as outras peças.',
+    },
+    {
+      pergunta: 'O que um pino **digital** consegue entender?',
+      opcoes: [
+        'Qualquer número de 0 a 1000',
+        'Só dois estados: ligado (1) ou desligado (0)',
+        'As cores das peças ligadas nele',
+      ],
+      certa: 1,
+      explicacao: 'Pinos digitais só entendem **ligado ou desligado**. Para valores que variam, como a luz do ambiente, usamos os pinos **analógicos** (A0 a A5).',
+    },
+    {
+      pergunta: 'O que acontece se você encostar um fio do 5V direto no GND?',
+      opcoes: [
+        'O LED da placa começa a piscar',
+        'O programa reinicia do começo',
+        'Um curto-circuito, que pode estragar a placa ou a porta USB',
+      ],
+      certa: 2,
+      explicacao: 'Ligar o 5V direto no GND é um **curto-circuito**: a corrente passa sem nada no caminho. Nunca faça isso!',
+    },
+    {
+      pergunta: 'Você enviou o programa e depois desligou o cabo USB. O que acontece com o programa?',
+      opcoes: [
+        'Ele some, e é preciso enviar de novo',
+        'Fica gravado na placa e volta a rodar quando ela recebe energia',
+        'Passa a rodar só no computador',
+      ],
+      certa: 1,
+      explicacao: 'O programa fica **gravado na memória** do Arduino. Sempre que a placa recebe energia (pelo USB ou por uma bateria), ele roda de novo.',
+    },
+  ],
 }

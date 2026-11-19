@@ -68,4 +68,42 @@ export default {
       ],
     },
   ],
+  quiz: [
+    {
+      pergunta: 'Por que o motor **não** pode ser ligado direto no pino do Arduino?',
+      opcoes: [
+        'Porque ele giraria rápido demais',
+        'Porque o pino aguenta pouca corrente e o Arduino pode queimar',
+        'Porque os pinos só funcionam com LEDs',
+      ],
+      certa: 1,
+      explicacao: 'O pino aguenta só o bastante para um LED. O motor precisa de **muito mais corrente**, e o Arduino pode queimar.',
+    },
+    {
+      pergunta: 'O que faz o driver de motor (ponte H)?',
+      opcoes: [
+        'Funciona como um interruptor forte: liga o motor com a energia das pilhas quando o Arduino manda',
+        'Mede a velocidade do robô',
+        'Grava o programa dentro do motor',
+      ],
+      certa: 0,
+      explicacao: 'O Arduino dá a ordem com um **sinal fraco** e o driver liga o motor com a energia das **pilhas ou da bateria**. Ele também consegue inverter o sentido do giro.',
+    },
+    {
+      pergunta: 'Num robô de 2 rodas, só o motor da **esquerda** está girando para frente. O que o robô faz?',
+      opcoes: ['Anda reto', 'Faz uma curva para a esquerda', 'Faz uma curva para a direita'],
+      certa: 2,
+      explicacao: 'O lado esquerdo empurra e o direito fica parado, então o robô gira em volta da roda direita: **curva para a direita**. Teste andando com os colegas!',
+    },
+    {
+      pergunta: 'Seu robô anda para trás quando deveria ir para frente. Qual é a solução mais provável?',
+      opcoes: [
+        'Trocar as pilhas por novas',
+        'Trocar os dois fios daquele motor no driver',
+        'Desligar o GND do Arduino',
+      ],
+      certa: 1,
+      explicacao: 'Inverter os fios do motor inverte o giro. Troque os **dois fios daquele motor** no driver. E nunca desligue o GND: ele precisa ser **comum** a tudo.',
+    },
+  ],
 }

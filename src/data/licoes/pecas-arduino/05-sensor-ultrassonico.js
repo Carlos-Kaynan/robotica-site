@@ -72,4 +72,38 @@ export default {
       ],
     },
   ],
+  quiz: [
+    {
+      pergunta: 'O sensor ultrassônico funciona do mesmo jeito que qual animal?',
+      opcoes: [
+        'O gato, que enxerga no escuro',
+        'O morcego, que usa o eco do som',
+        'A coruja, que tem olhos grandes',
+      ],
+      certa: 1,
+      explicacao: 'Igual ao **morcego**: o sensor solta um som agudo e escuta o **eco**. Quanto mais o eco demora, mais longe está o objeto.',
+    },
+    {
+      pergunta: 'Na conta da distância, por que dividimos por 2?',
+      opcoes: [
+        'Porque o som vai até o objeto e depois volta',
+        'Porque o sensor tem 2 "olhos"',
+        'Só para o número ficar menor',
+      ],
+      certa: 0,
+      explicacao: 'O tempo medido é de **ida e volta** do som. A distância até o objeto é só a ida, ou seja, **metade** do caminho.',
+    },
+    {
+      pergunta: 'O eco voltou em **2000** microssegundos. Usando `distância = tempo × 0,034 ÷ 2`, qual é a distância?',
+      opcoes: ['17 cm', '68 cm', '34 cm'],
+      certa: 2,
+      explicacao: '2000 × 0,034 = 68. Depois, 68 ÷ 2 = **34 cm**. Quem respondeu 68 esqueceu de dividir por 2!',
+    },
+    {
+      pergunta: 'Qual destes objetos o sensor tem **mais dificuldade** para medir?',
+      opcoes: ['Uma parede lisa, bem de frente', 'Uma almofada de espuma', 'Uma caixa de papelão, bem de frente'],
+      certa: 1,
+      explicacao: 'Objetos **macios**, como espuma e tecido, "engolem" o som e o eco quase não volta. Objetos muito finos ou inclinados também atrapalham.',
+    },
+  ],
 }

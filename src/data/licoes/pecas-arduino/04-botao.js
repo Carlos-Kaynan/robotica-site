@@ -65,4 +65,46 @@ export default {
       ],
     },
   ],
+  quiz: [
+    {
+      pergunta: 'No projeto, o botão é uma entrada ou uma saída?',
+      opcoes: [
+        'Uma saída, igual ao LED',
+        'Uma entrada: com ele o Arduino recebe informação do mundo',
+        'Nenhum dos dois: ele é uma fonte de energia',
+      ],
+      certa: 1,
+      explicacao: 'O LED é uma **saída** (o Arduino manda o sinal). O botão é uma **entrada**: o Arduino lê **1** quando está apertado e **0** quando está solto.',
+    },
+    {
+      pergunta: 'Para que serve o resistor de 10 kΩ ligado ao botão?',
+      opcoes: [
+        'Para deixar o botão mais duro de apertar',
+        'Para o LED brilhar mais forte',
+        'Para a leitura ficar em 0 enquanto ninguém aperta, sem valores aleatórios',
+      ],
+      certa: 2,
+      explicacao: 'Sem o resistor, o pino fica "desligado de tudo" e lê valores aleatórios, como um rádio fora da estação. O resistor de **10 kΩ** até o GND mantém a leitura em **0**.',
+    },
+    {
+      pergunta: 'Qual é o jeito mais seguro de colocar o botão na protoboard?',
+      opcoes: [
+        'Atravessando o canal do meio',
+        'Com as 4 pernas na mesma coluna',
+        'Com as pernas na linha vermelha (+)',
+      ],
+      certa: 0,
+      explicacao: 'Atravessando o **canal do meio**, as pernas ficam em colunas separadas e não há como errar a ligação.',
+    },
+    {
+      pergunta: 'Você ligou a opção **pull-up interno**. O que muda na leitura do botão?',
+      opcoes: [
+        'O botão para de funcionar',
+        'A leitura fica invertida: apertado = 0 e solto = 1',
+        'O Arduino passa a ler valores aleatórios',
+      ],
+      certa: 1,
+      explicacao: 'O pull-up interno dispensa o resistor de fora, mas **inverte** a leitura: apertado vira **0** e solto vira **1**. Lembre disso no programa!',
+    },
+  ],
 }

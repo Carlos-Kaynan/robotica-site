@@ -37,5 +37,5 @@ npm run lint
 ## Plano combinado
 
 1. Fase 1 (feita): projeto, tela inicial, rotas e a trilha "Peças do kit Arduino" completa.
-2. Fase 2: quiz no fim de cada lição.
+2. Fase 2 (feita): quiz no fim de cada lição (`src/components/Quiz.jsx`, campo `quiz` de cada lição, 4 perguntas). Terminar o quiz marca a lição como lida; o melhor resultado fica em `localStorage`, chave `robotica:quiz-melhor`.
 3. Fase 3 em diante: as outras trilhas, uma por vez. Pesquisar antes de escrever a do LEGO Computação e IA (produto recente).
