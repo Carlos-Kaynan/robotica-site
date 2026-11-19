@@ -420,7 +420,9 @@ a.cartao-trilha:hover {
 .figura-circuito-led svg,
 .figura-tela-scratch svg,
 .figura-palco-coordenadas svg,
-.figura-entrada-saida svg {
+.figura-entrada-saida svg,
+.figura-fluxograma-semaforo svg,
+.figura-circuito-semaforo svg {
   max-width: 540px;
 }
 
@@ -500,6 +502,10 @@ a.cartao-trilha:hover {
 .scratch-variaveis { --cor: #ff8c1a; --cor-borda: #db6e00; --cor-texto: #2b1500; }
 /* Blocos do Arduino no mBlock: a cor é aproximada (verde-azulado, como a marca do Arduino). */
 .scratch-arduino { --cor: #00979c; --cor-borda: #00777b; --cor-texto: #fff; }
+/* Categorias Saída e Entrada do Tinkercad (cores aproximadas). Controle, Matemática e
+   Variáveis do Tinkercad usam as classes controle, operadores e variaveis. */
+.scratch-saida { --cor: #3d7fd6; --cor-borda: #2c62a8; --cor-texto: #fff; }
+.scratch-entrada { --cor: #8e5bd0; --cor-borda: #6d42a8; --cor-texto: #fff; }
 
 .figura-scratch {
   text-align: left;

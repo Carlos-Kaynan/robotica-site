@@ -21,7 +21,7 @@ function Bandeira() {
   )
 }
 
-const CATEGORIAS = /^(eventos|movimento|aparencia|som|controle|sensores|operadores|variaveis|arduino):/
+const CATEGORIAS = /^(eventos|movimento|aparencia|som|controle|sensores|operadores|variaveis|arduino|saida|entrada):/
 
 // Separa a categoria do começo do texto, se houver: "arduino:ler pino" -> ['arduino', 'ler pino'].
 function separarCategoria(texto, padrao) {
