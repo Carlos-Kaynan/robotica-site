@@ -2,6 +2,7 @@
 // Para um desenho novo: crie o componente e acrescente o nome aqui.
 import CircuitoLed from './CircuitoLed.jsx'
 import { Botao, Led, MotorRoda, PlacaArduino, Protoboard, Resistor, Robo, SensorUltrassonico, Servo } from './Pecas.jsx'
+import EntradaSaida from './EntradaSaida.jsx'
 import PalcoCoordenadas from './PalcoCoordenadas.jsx'
 import TelaScratch from './TelaScratch.jsx'
 
@@ -18,4 +19,5 @@ export const ilustracoes = {
   'circuito-led': CircuitoLed,
   'tela-scratch': TelaScratch,
   'palco-coordenadas': PalcoCoordenadas,
+  'entrada-saida': EntradaSaida,
 }

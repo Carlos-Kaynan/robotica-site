@@ -1,6 +1,7 @@
 // As 9 trilhas do site, na ordem em que aparecem na tela inicial.
 // Cada trilha tem uma lista de lições (pasta src/data/licoes/<id da trilha>/).
 // Trilha com "licoes: []" aparece na tela inicial como "Em breve".
+import mundoFisico from './licoes/mundo-fisico/index.js'
 import pecasArduino from './licoes/pecas-arduino/index.js'
 import scratch from './licoes/scratch/index.js'
 
@@ -17,7 +18,7 @@ export const trilhas = [
     icone: '💡',
     titulo: 'Código no mundo físico',
     resumo: 'Os mesmos blocos do Scratch acendem luzes, leem sensores e giram motores.',
-    licoes: [],
+    licoes: mundoFisico,
   },
   {
     id: 'pecas-arduino',

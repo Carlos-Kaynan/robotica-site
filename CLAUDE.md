@@ -39,4 +39,4 @@ npm run lint
 
 1. Fase 1 (feita): projeto, tela inicial, rotas e a trilha "Peças do kit Arduino" completa.
 2. Fase 2 (feita): quiz no fim de cada lição (`src/components/Quiz.jsx`, campo `quiz` de cada lição, 4 perguntas). Terminar o quiz marca a lição como lida; o melhor resultado fica em `localStorage`, chave `robotica:quiz-melhor`.
-3. Fase 3 em diante: as outras trilhas, uma por vez. Feitas: Scratch (7 lições, termina no minijogo "Pegue a maçã"). Pesquisar antes de escrever a do LEGO Computação e IA (produto recente).
+3. Fase 3 em diante: as outras trilhas, uma por vez. Feitas: Scratch (7 lições, termina no minijogo "Pegue a maçã"); Código no mundo físico (6 lições com mBlock + Arduino, termina no sensor de ré). No mBlock 5 com Arduino Uno, o sensor ultrassônico só funciona no modo upload e o ator não interage com a placa no modo ao vivo; os nomes dos blocos do Arduino nas lições são aproximados (o usuário escolheu assim, sem conferir no mBlock). Pesquisar antes de escrever a do LEGO Computação e IA (produto recente).

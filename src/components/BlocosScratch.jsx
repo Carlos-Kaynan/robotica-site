@@ -8,6 +8,8 @@
 //   {sorteie}     -> bloco redondo de operador, encaixado no campo (ex.: número aleatório)
 //   {bandeira}    -> a bandeira verde
 // Condições e operadores podem ter campos e menus dentro: <tecla [espaço] pressionada?>.
+// Por padrão a condição é azul-clara (Sensores) e o bloco redondo é verde (Operadores).
+// Para outra cor, comece com a categoria e dois-pontos: <arduino:ler pino digital (2)>, {variaveis:distância}.
 // Bloco cujo texto começa com "quando" vira um "chapéu": é ele que inicia o código.
 
 function Bandeira() {
@@ -19,6 +21,14 @@ function Bandeira() {
   )
 }
 
+const CATEGORIAS = /^(eventos|movimento|aparencia|som|controle|sensores|operadores|variaveis|arduino):/
+
+// Separa a categoria do começo do texto, se houver: "arduino:ler pino" -> ['arduino', 'ler pino'].
+function separarCategoria(texto, padrao) {
+  const achou = texto.match(CATEGORIAS)
+  return achou ? [achou[1], texto.slice(achou[0].length)] : [padrao, texto]
+}
+
 function TextoBloco({ texto }) {
   const partes = texto.split(/(\([^)]*\)|\[[^\]]*\]|<[^>]*>|\{[^}]*\})/g)
   return partes.map((parte, i) => {
@@ -26,19 +36,23 @@ function TextoBloco({ texto }) {
     if (parte === '{bandeira}') return <Bandeira key={i} />
     if (parte.startsWith('(') && parte.endsWith(')')) return <span key={i} className="scratch-campo">{dentro}</span>
     if (parte.startsWith('[') && parte.endsWith(']')) return <span key={i} className="scratch-menu">{dentro} ▾</span>
-    // Condições e operadores podem ter campos e menus dentro, então o texto deles é lido de novo.
-    if (parte.startsWith('<') && parte.endsWith('>'))
+    // Condições e blocos redondos podem ter campos e menus dentro, então o texto deles é lido de novo.
+    if (parte.startsWith('<') && parte.endsWith('>')) {
+      const [cor, resto] = separarCategoria(dentro, 'sensores')
       return (
-        <span key={i} className="scratch-condicao">
-          <TextoBloco texto={dentro} />
+        <span key={i} className={`scratch-condicao scratch-${cor}`}>
+          <TextoBloco texto={resto} />
         </span>
       )
-    if (parte.startsWith('{') && parte.endsWith('}'))
+    }
+    if (parte.startsWith('{') && parte.endsWith('}')) {
+      const [cor, resto] = separarCategoria(dentro, 'operadores')
       return (
-        <span key={i} className="scratch-operador">
-          <TextoBloco texto={dentro} />
+        <span key={i} className={`scratch-redondo scratch-${cor}`}>
+          <TextoBloco texto={resto} />
         </span>
       )
+    }
     return parte
   })
 }

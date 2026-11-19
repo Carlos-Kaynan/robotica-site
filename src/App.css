@@ -419,7 +419,8 @@ a.cartao-trilha:hover {
 /* Diagramas de circuito são mais largos que as peças sozinhas. */
 .figura-circuito-led svg,
 .figura-tela-scratch svg,
-.figura-palco-coordenadas svg {
+.figura-palco-coordenadas svg,
+.figura-entrada-saida svg {
   max-width: 540px;
 }
 
@@ -497,6 +498,8 @@ a.cartao-trilha:hover {
 .scratch-sensores { --cor: #5cb1d6; --cor-borda: #2e8eb8; --cor-texto: #0b2a38; }
 .scratch-operadores { --cor: #59c059; --cor-borda: #389438; --cor-texto: #0d2b0d; }
 .scratch-variaveis { --cor: #ff8c1a; --cor-borda: #db6e00; --cor-texto: #2b1500; }
+/* Blocos do Arduino no mBlock: a cor é aproximada (verde-azulado, como a marca do Arduino). */
+.scratch-arduino { --cor: #00979c; --cor-borda: #00777b; --cor-texto: #fff; }
 
 .figura-scratch {
   text-align: left;
@@ -592,18 +595,18 @@ a.cartao-trilha:hover {
   border-radius: 6px;
 }
 
-.scratch-operador {
+.scratch-redondo {
   padding: 0.15rem 0.5rem;
-  background: #59c059;
-  color: #0d2b0d;
-  border: 1px solid #389438;
+  background: var(--cor);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
   border-radius: 999px;
 }
 
 .scratch-condicao {
   padding: 0.2rem 1rem;
-  background: #5cb1d6;
-  color: #0b2a38;
+  background: var(--cor);
+  color: var(--cor-texto);
   clip-path: polygon(0.7rem 0, calc(100% - 0.7rem) 0, 100% 50%, calc(100% - 0.7rem) 100%, 0.7rem 100%, 0 50%);
 }
 
