@@ -1,0 +1,520 @@
+/* ---------- Topo e rodapé ---------- */
+.topo {
+  background: var(--marinho);
+  padding: 0.75rem 1.25rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #fff;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.logo em {
+  font-style: normal;
+  color: var(--laranja);
+}
+
+.rodape {
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+}
+
+/* ---------- Partes comuns ---------- */
+.pagina {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.voltar {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--azul-petroleo);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}
+
+.subtitulo {
+  color: var(--texto-suave);
+  font-size: 1.1rem;
+  margin-top: -0.5rem;
+}
+
+.botao {
+  display: inline-block;
+  padding: 0.65rem 1.1rem;
+  border: 2px solid var(--borda);
+  border-radius: 999px;
+  background: var(--cartao);
+  color: var(--marinho);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  border-color: var(--azul-petroleo);
+}
+
+.botao-principal {
+  background: var(--ferrugem);
+  border-color: var(--ferrugem);
+  color: #fff;
+}
+
+.botao-principal:hover {
+  background: #a3461e;
+  border-color: #a3461e;
+}
+
+.botao-lida {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: #fff;
+}
+
+.botao-link {
+  background: var(--azul-petroleo);
+  border-color: var(--azul-petroleo);
+  color: #fff;
+}
+
+.botao-link:hover {
+  background: #17606e;
+}
+
+/* ---------- Barra de progresso ---------- */
+.progresso {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--texto-suave);
+}
+
+.progresso-trilho {
+  flex: 1;
+  max-width: 260px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--borda);
+  overflow: hidden;
+}
+
+.progresso-preenchido {
+  height: 100%;
+  background: var(--verde);
+  transition: width 0.3s;
+}
+
+/* ---------- Tela inicial ---------- */
+.destaque {
+  background: var(--marinho);
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem max(1.25rem, calc((100% - 1080px) / 2 + 1.25rem));
+}
+
+.sobretitulo {
+  color: var(--laranja);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.destaque h1 {
+  color: #fdfaf3;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0.5rem 0 1rem;
+}
+
+.destaque-subtitulo {
+  color: #c9d3e0;
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.destaque-desenhos {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.destaque-placa svg {
+  width: 200px;
+}
+
+.destaque-robo svg {
+  width: 280px;
+}
+
+.titulo-secao {
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+
+.grade-trilhas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.grade-trilhas li {
+  display: flex;
+}
+
+.cartao-trilha {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: var(--cartao);
+  border: 2px solid var(--borda);
+  border-radius: var(--raio);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    border-color 0.15s;
+}
+
+a.cartao-trilha:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra);
+  border-color: var(--azul-petroleo);
+}
+
+.cartao-em-breve {
+  opacity: 0.7;
+}
+
+.cartao-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartao-icone {
+  font-size: 2rem;
+}
+
+.cartao-numero {
+  color: var(--ferrugem);
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cartao-titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--marinho);
+}
+
+.cartao-resumo {
+  flex: 1;
+  color: var(--texto-suave);
+}
+
+.etiqueta-em-breve {
+  align-self: flex-start;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: var(--borda);
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+/* ---------- Página da trilha ---------- */
+.lista-licoes {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cartao-licao {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--cartao);
+  border: 2px solid var(--borda);
+  border-radius: var(--raio);
+  text-decoration: none;
+  color: inherit;
+}
+
+.cartao-licao:hover {
+  border-color: var(--azul-petroleo);
+  box-shadow: var(--sombra);
+}
+
+.cartao-licao-texto {
+  flex: 1;
+  display: grid;
+}
+
+.cartao-licao-titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--marinho);
+}
+
+.cartao-licao-resumo {
+  color: var(--texto-suave);
+}
+
+.cartao-licao-tempo {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.numero-bolinha {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: var(--azul-petroleo);
+  color: #fff;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+}
+
+.numero-bolinha.lida {
+  background: var(--verde);
+}
+
+.numero-bolinha.pequena {
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 0.8rem;
+}
+
+/* ---------- Página da lição ---------- */
+.licao {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.licao-menu {
+  position: sticky;
+  top: 1rem;
+}
+
+.licao-menu ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.licao-menu ol a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+
+.licao-menu ol a:hover {
+  background: var(--azul-petroleo-fundo);
+}
+
+.licao-menu ol a.atual {
+  background: var(--azul-petroleo-fundo);
+  font-weight: 800;
+}
+
+.licao-conteudo {
+  min-width: 0;
+  max-width: 720px;
+  font-size: 1.08rem;
+}
+
+.licao-meta {
+  color: var(--ferrugem);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.licao-conteudo h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0.4rem 0 0.5rem;
+}
+
+.licao-resumo {
+  color: var(--texto-suave);
+  font-size: 1.15rem;
+  margin-top: 0;
+}
+
+.licao-conteudo h2 {
+  font-size: 1.45rem;
+  margin: 2rem 0 0.5rem;
+}
+
+.licao-conteudo li + li {
+  margin-top: 0.35rem;
+}
+
+.figura {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: var(--cartao);
+  border: 2px solid var(--borda);
+  border-radius: var(--raio);
+  text-align: center;
+}
+
+.figura svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Diagramas de circuito são mais largos que as peças sozinhas. */
+.figura-circuito-led svg {
+  max-width: 540px;
+}
+
+.figura figcaption {
+  margin-top: 0.5rem;
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+}
+
+.caixa {
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: var(--raio);
+  border-left: 6px solid;
+}
+
+.caixa p,
+.caixa ul {
+  margin: 0.35rem 0 0;
+}
+
+.caixa-dica {
+  background: var(--azul-petroleo-fundo);
+  border-color: var(--azul-petroleo);
+}
+
+.caixa-cuidado {
+  background: #fbe9e1;
+  border-color: var(--ferrugem);
+}
+
+.caixa-professor {
+  background: #fdf0e1;
+  border-color: var(--laranja);
+}
+
+.caixa-resumo {
+  background: var(--marinho);
+  border-color: var(--laranja);
+  color: #e8edf4;
+}
+
+.caixa-resumo strong {
+  color: #fff;
+}
+
+.caixa-resumo code {
+  background: var(--marinho-claro);
+}
+
+.licao-fim {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--borda);
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
+}
+
+.licao-navegacao {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 800px) {
+  .destaque {
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .destaque-placa {
+    display: none;
+  }
+
+  .destaque-robo svg {
+    width: 220px;
+  }
+
+  .licao {
+    grid-template-columns: 1fr;
+  }
+
+  /* No celular, a lista de lições sai do lado e fica só o link de voltar. */
+  .licao-menu {
+    position: static;
+  }
+
+  .licao-menu ol {
+    display: none;
+  }
+
+  .cartao-licao-tempo {
+    display: none;
+  }
+}
