@@ -485,6 +485,156 @@ a.cartao-trilha:hover {
   flex-wrap: wrap;
 }
 
+/* ---------- Quiz do fim da lição ---------- */
+.quiz {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: var(--cartao);
+  border: 2px solid var(--borda);
+  border-radius: var(--raio);
+  scroll-margin-top: 1rem;
+}
+
+.licao-conteudo .quiz h2 {
+  margin-top: 0;
+}
+
+.quiz-instrucao {
+  color: var(--texto-suave);
+  margin-top: 0;
+}
+
+.quiz-perguntas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.licao-conteudo .quiz-perguntas li + li {
+  margin-top: 0;
+}
+
+.quiz-enunciado {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+  color: var(--marinho);
+}
+
+.quiz-opcoes {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quiz-opcao {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 2px solid var(--borda);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--texto);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+
+.quiz-opcao:hover:not(:disabled) {
+  border-color: var(--azul-petroleo);
+  background: var(--azul-petroleo-fundo);
+}
+
+.quiz-opcao:disabled {
+  cursor: default;
+}
+
+.quiz-letra {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: var(--fundo);
+  border: 2px solid var(--borda);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--marinho);
+}
+
+.quiz-opcao.certa {
+  border-color: var(--verde);
+  background: #e3f4ea;
+}
+
+.quiz-opcao.certa .quiz-letra {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: #fff;
+}
+
+.quiz-opcao.errada {
+  border-color: var(--ferrugem);
+  background: #fbe9e1;
+}
+
+.quiz-opcao.errada .quiz-letra {
+  background: var(--ferrugem);
+  border-color: var(--ferrugem);
+  color: #fff;
+}
+
+.quiz-retorno {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border-left: 5px solid;
+}
+
+.quiz-retorno.certa {
+  background: #e3f4ea;
+  border-color: var(--verde);
+}
+
+.quiz-retorno.errada {
+  background: #fbe9e1;
+  border-color: var(--ferrugem);
+}
+
+.quiz-placar {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--raio);
+  background: var(--marinho);
+  color: #e8edf4;
+  text-align: center;
+}
+
+.quiz-placar p {
+  margin: 0 0 0.75rem;
+}
+
+.quiz-placar-numero {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--laranja);
+}
+
+.quiz-placar-melhor {
+  font-size: 0.92rem;
+  color: #c9d3e0;
+}
+
 /* ---------- Celular ---------- */
 @media (max-width: 800px) {
   .destaque {

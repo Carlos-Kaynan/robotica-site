@@ -75,4 +75,30 @@ export default {
       ],
     },
   ],
+  quiz: [
+    {
+      pergunta: 'Qual perna do LED vai ligada ao pino do Arduino?',
+      opcoes: ['A perna curta', 'A perna comprida', 'Tanto faz, o LED não tem lado'],
+      certa: 1,
+      explicacao: 'A **perna comprida** é o positivo (ânodo) e vai para o pino. A perna curta é o negativo e vai para o GND.',
+    },
+    {
+      pergunta: 'O que acontece se você ligar o LED sem o resistor?',
+      opcoes: ['Ele acende mais fraco', 'Nada, funciona igual', 'Passa corrente demais e ele pode queimar'],
+      certa: 2,
+      explicacao: 'O resistor "segura" a corrente. Sem ele, passa corrente demais e o LED **queima**, podendo até danificar o pino do Arduino.',
+    },
+    {
+      pergunta: 'Você montou o circuito e o LED não acendeu. Qual é a primeira coisa a testar?',
+      opcoes: ['Virar o LED', 'Trocar o Arduino', 'Tirar o resistor'],
+      certa: 0,
+      explicacao: 'O LED só acende num sentido. Ligado ao contrário ele não estraga, só não acende, por isso **virar o LED** é o primeiro teste.',
+    },
+    {
+      pergunta: 'Qual destas frases sobre o resistor está certa?',
+      opcoes: ['Ele tem lado certo, igual ao LED', 'Pode ser ligado de qualquer jeito', 'Só funciona ligado direto no GND'],
+      certa: 1,
+      explicacao: 'O resistor **não tem lado**. O valor dele (como 220 Ω ou 330 Ω) aparece nas faixas coloridas.',
+    },
+  ],
 }

@@ -10,6 +10,10 @@
 //     { tipo: 'professor', itens: [...] }     -> caixa "Para o professor" (sugestões de aula)
 //     { tipo: 'link', texto, url }            -> botão que abre um site externo em outra aba
 //     { tipo: 'resumo', itens: [...] }        -> resumo final
+//   quiz (opcional): perguntas que aparecem no fim da lição (src/components/Quiz.jsx).
+//     { pergunta, opcoes: [...], certa, explicacao }
+//     "certa" é a posição da opção certa, contando do 0 (0 = primeira, 1 = segunda...).
+//     A explicação aparece depois que o aluno responde, certo ou errado.
 //
 // Para criar uma lição nova: copie um arquivo desta pasta, mude o conteúdo,
 // importe aqui e coloque na lista abaixo, na ordem certa.

@@ -31,3 +31,33 @@ export function marcarLida(chave, lida) {
 export function contarLidas(trilha) {
   return trilha.licoes.filter((licao) => estaLida(`${trilha.id}/${licao.id}`)).length
 }
+
+// Melhor resultado do quiz de cada lição (quantas perguntas a pessoa acertou),
+// guardado com a mesma chave "<trilha>/<lição>".
+const CHAVE_QUIZ = 'robotica:quiz-melhor'
+
+function lerResultados() {
+  try {
+    return JSON.parse(localStorage.getItem(CHAVE_QUIZ)) ?? {}
+  } catch {
+    return {}
+  }
+}
+
+// Devolve o melhor número de acertos, ou null se o quiz nunca foi terminado.
+export function melhorResultado(chave) {
+  return lerResultados()[chave] ?? null
+}
+
+// Só troca o valor guardado se o novo resultado for melhor.
+export function salvarResultado(chave, acertos) {
+  try {
+    const resultados = lerResultados()
+    if (acertos > (resultados[chave] ?? -1)) {
+      resultados[chave] = acertos
+      localStorage.setItem(CHAVE_QUIZ, JSON.stringify(resultados))
+    }
+  } catch {
+    // sem localStorage: ignora
+  }
+}

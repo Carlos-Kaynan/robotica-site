@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Bloco from '../components/Bloco.jsx'
+import Quiz from '../components/Quiz.jsx'
 import { buscarTrilha } from '../data/trilhas.js'
 import { estaLida, marcarLida } from '../progresso.js'
 import NaoEncontrado from './NaoEncontrado.jsx'
@@ -29,6 +30,12 @@ function ConteudoLicao({ trilha, licao }) {
   function alternarLida() {
     marcarLida(chave, !lida)
     setLida(!lida)
+  }
+
+  // Terminar o quiz conta como ter lido a lição.
+  function concluirQuiz() {
+    marcarLida(chave, true)
+    setLida(true)
   }
 
   return (
@@ -63,6 +70,8 @@ function ConteudoLicao({ trilha, licao }) {
         {licao.blocos.map((bloco, i) => (
           <Bloco key={i} bloco={bloco} />
         ))}
+
+        {licao.quiz && <Quiz chave={chave} perguntas={licao.quiz} aoTerminar={concluirQuiz} />}
 
         <div className="licao-fim">
           <button type="button" className={`botao ${lida ? 'botao-lida' : 'botao-principal'}`} onClick={alternarLida}>
